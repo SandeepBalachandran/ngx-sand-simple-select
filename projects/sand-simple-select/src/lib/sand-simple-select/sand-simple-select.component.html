@@ -1,0 +1,29 @@
+<ng-container>
+    <div class="a-te-dropdown" (click)="showDropdown()" tabindex="-1" (click)="$event.stopPropagation()">
+        <span> {{selectLabel}} <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+    </div>
+    <ng-container  *ngIf="showList && !disabledropdwon">
+        <div class="a-te-dropdownlist shadow">
+            <div class="container-wrap">
+                <ng-container *ngFor="let data of dropdowndata;let i = index" class="item">
+                    <!--object logic-->
+                    <div (click)="onSelect(data,i)" class="sand-container">
+                        <ng-container *ngTemplateOutlet="itemTemplate; context: { $implicit: data ,index : i  }">
+                        </ng-container>
+
+                    </div>
+                </ng-container>
+
+
+                <!--Not found-->
+                <ng-container>
+                    <div class="not-found" *ngIf="noData">
+                        <ng-container *ngTemplateOutlet="notFoundTemplate;  context: { $implicit:noDataText  }">
+                        </ng-container>
+                    </div>
+                </ng-container>
+
+            </div>
+        </div>
+    </ng-container>
+</ng-container>

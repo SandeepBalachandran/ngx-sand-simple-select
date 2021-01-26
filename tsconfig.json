@@ -12,6 +12,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/sand-simple-select/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/sand-simple-select/tsconfig.spec.json"
     }
 ]
 }

@@ -7,4 +7,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SandSimpleSelect';
+  dropdowndata = [
+    {
+      name:'one'
+    },
+    {
+      name:'two'
+    }
+  ]
+  disabled= false;
+  selectLabel="Choose one"
+  noDataText="No data found"
+
+  onSelect(event){
+    console.log(event)
+  }
+  open(event){
+    console.log('open?',event)
+  }
+  close(event) {
+    console.log('close?',event)
+  }
 }
