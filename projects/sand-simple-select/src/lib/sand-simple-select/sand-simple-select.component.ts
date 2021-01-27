@@ -1,4 +1,4 @@
-import { Component, EventEmitter, forwardRef, Input, OnInit, Output, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, forwardRef, HostListener, Input, OnInit, Output, TemplateRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -16,6 +16,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 export class SandSimpleSelectComponent implements OnInit {
   showList: boolean;
   public noData = false;
+  clickedInside: boolean;
 
 
   constructor() { }
@@ -125,5 +126,38 @@ export class SandSimpleSelectComponent implements OnInit {
     this.showList = false;
     this.selectLabel = data.name;
   }
+
+  /**
+* click listener for host inside this component i.e
+* if many instances are there, this detects if clicked inside
+* this instance
+*/
+  @HostListener('click')
+  public clickInsideComponent() {
+    this.clickedInside = true;
+  }
+
+
+  /**
+   * click handler on documnent to hide the open dropdown if clicked outside
+   */
+  @HostListener('document:click')
+  public clickOutsideComponent() {
+    /* istanbul ignore else */
+    if (!this.clickedInside) {
+      this.showList = false;
+    }
+    this.clickedInside = false;
+  }
+
+  @HostListener('focus', ['$event']) public focus() {
+    this.showList = false;
+    console.log('focused');
+  }
+  @HostListener('blur', ['$event']) public blur() {
+    console.log('blured');
+    this.showList = false;
+  }
+
 
 }
