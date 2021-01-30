@@ -13,6 +13,18 @@ export class AppComponent {
     },
     {
       name:'two'
+    },
+    {
+      name:'third entry'
+    },
+    {
+      name:'fourth entry'
+    },
+    {
+      name:'fifth entry'
+    },
+    {
+      name:'sixth entry'
     }
   ]
   disabled= false;
@@ -20,6 +32,9 @@ export class AppComponent {
   noDataText="No data found"
 
   onSelect(event){
+    console.log(event)
+  }
+  onSearch(event) {
     console.log(event)
   }
   open(event){

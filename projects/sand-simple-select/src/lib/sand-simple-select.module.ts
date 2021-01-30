@@ -3,6 +3,7 @@ import { SandSimpleSelectComponent } from './sand-simple-select/sand-simple-sele
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SharedPipe } from './pipes/shared.pipe';
 
 
 
@@ -12,9 +13,13 @@ import { FormsModule } from '@angular/forms';
   imports: [
     HttpClientModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    SharedPipe
 
   ],
-  exports: [SandSimpleSelectComponent]
+  exports: [
+    SandSimpleSelectComponent,
+    SharedPipe
+  ]
 })
 export class SandSimpleSelectModule { }

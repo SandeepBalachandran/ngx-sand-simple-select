@@ -1,27 +1,105 @@
-# SandSimpleSelect
+<!-- ![](./images/preview.png) -->
+<h1 align='center'>ngx-sand-simpleselect</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+<h3 align="center"> An angular select package</h3>
+<br>
+<p align="center"> 
+  <a href="https://github.com/SandeepBalachandran/ngx-sand-simple-select/releases/" target="_blank">
+    <img alt="GitHub release" src="https://img.shields.io/github/v/release/SandeepBalachandran/ngx-sand-simple-select?include_prereleases&style=flat-square">
+  </a> 
 
-## Development server
+  <a href="https://github.com/SandeepBalachandran/ngx-sand-simple-select/commits/main" target="_blank">
+    <img src="https://img.shields.io/github/last-commit/SandeepBalachandran/ngx-sand-simple-select?style=flat-square" alt="GitHub last commit">
+  </a>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+  <a href="https://github.com/SandeepBalachandran/ngx-sand-simple-select/issues" target="_blank">
+    <img src="https://img.shields.io/github/issues/SandeepBalachandran/ngx-sand-simple-select?style=flat-square&color=red" alt="GitHub issues">
+  </a>
 
-## Code scaffolding
+  <a href="https://github.com/SandeepBalachandran/ngx-sand-simple-select/pulls" target="_blank">
+    <img src="https://img.shields.io/github/issues-pr/SandeepBalachandran/ngx-sand-simple-select?style=flat-square&color=blue" alt="GitHub pull requests">
+  </a>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  </br>
 
-## Build
+  <a href="https://standardjs.com" target="_blank">
+    <img alt="ESLint" src="https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square">
+  </a>
+  
+  <a href="" target="_blank">
+    <img alt="ESLint" src="https://img.shields.io/github/stars/SandeepBalachandran/ngx-sand-simple-select">
+  </a>
+  
+  <a href="" target="_blank">
+    <img alt="ESLint" src="https://img.shields.io/github/forks/SandeepBalachandran/ngx-sand-simple-select">
+  </a>
+   <a href="" target="_blank">
+    <img alt="Codesize" src="https://img.shields.io/github/languages/code-size/SandeepBalachandran/ngx-sand-simple-select.svg">
+  </a>
+  <a href="" target="_blank">
+    <img alt="Top Language" src="https://img.shields.io/github/languages/top/SandeepBalachandran/ngx-sand-simple-select.svg">
+  </a>
+  
+</p>
+<hr>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Demo 
+![](https://github.com/SandeepBalachandran/ngx-sand-simple-seelct/raw/main/assets/demo.gif) 
 
-## Running unit tests
+* [Live Demo](https://sandeepbalachandran.github.io/ngx-sand-simpleselect/)
+* [Playground])
+* [NPM package]()
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Table of contents
+* [Features](#features)
+* [Installation](#getting-started)
+* [API](#api)
+* [Usage](#usage)
 
-## Running end-to-end tests
+## Features
+* Type and search at the same time
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+[Goto Top](#table-of-contents)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Getting Started
+### Step 1 : Install the package 
+#### NPM
+```cmd
+npm install ngx-sand-simpleselect
+```
+### Step 2 : After installation import SandSimpleSelectModule into your root or feature module
+
+```cmd
+import { SandSimpleSelectModule } from 'sand-simple-select'
+```
+### Step 3 : Add ``` SandSimpleSelectModule``` to the imports of your NgModule
+
+```cmd
+@NgModule({
+  imports: [
+    ...,
+    SandSimpleSelectModule
+  ],
+  ...
+})
+class YourModule { ... }
+```
+
+### Usage  
+* Use ```<ngx-sand-simpleselect></ngx-sand-simpleselect> ``` in your templates to add the default dropdown in your view like below
+
+```ts
+  <sand-simple-select 
+  [dropdowndata]="dropdowndata" 
+  [disabledropdwon]="disabled" 
+  [selectLabel]="selectLabel"
+  [noDataText]="noDataText" 
+  (select)="onSelect($event)"  
+  (search)="onSearch($event)" 
+  (open)="open($event)" 
+  (close)="close($event)">
+    </sand-simple-select>
+ ```
+ 
+ [Goto Top](#table-of-contents)

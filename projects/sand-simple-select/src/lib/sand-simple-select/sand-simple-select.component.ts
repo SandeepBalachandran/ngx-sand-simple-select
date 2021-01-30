@@ -17,6 +17,7 @@ export class SandSimpleSelectComponent implements OnInit {
   showList: boolean;
   public noData = false;
   clickedInside: boolean;
+  searchKey: string='';
 
 
   constructor() { }
@@ -70,6 +71,11 @@ export class SandSimpleSelectComponent implements OnInit {
   */
   @Output() public close: EventEmitter<any> = new EventEmitter();
 
+  /**
+   * Emit event on searching
+   */
+  @Output() public search: EventEmitter<any> = new EventEmitter();
+
 
   /**
   * Propagates new value when model changes
@@ -113,16 +119,24 @@ export class SandSimpleSelectComponent implements OnInit {
     } else {
       this.close.emit(true)
     }
-    console.log(this.showList)
     if (this.dropdowndata.length == 0) {
       this.noData = true;
     }
+  }
+  /**
+   * 
+   * Event on search
+   */
+  onSearch(event) {
+    
+    this.search.emit(event.target.value);
   }
   /**
   * Event upon selecting a value
   */
   onSelect(data, i) {
     this.select.emit(data)
+    this.propagateChange(data)
     this.showList = false;
     this.selectLabel = data.name;
   }
@@ -146,17 +160,24 @@ export class SandSimpleSelectComponent implements OnInit {
     /* istanbul ignore else */
     if (!this.clickedInside) {
       this.showList = false;
+      this.init()
     }
     this.clickedInside = false;
   }
 
-  @HostListener('focus', ['$event']) public focus() {
+  @HostListener('focus', ['$event']) public focus(event) {
     this.showList = false;
-    console.log('focused');
+    this.init()
+    
   }
-  @HostListener('blur', ['$event']) public blur() {
-    console.log('blured');
+  @HostListener('blur', ['$event']) public blur(event) {
+    
     this.showList = false;
+    this.init();
+  }
+
+  init(){
+    this.searchKey = ''
   }
 
 
