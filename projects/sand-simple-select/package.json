@@ -1,5 +1,5 @@
 {
-  "name": "sand-simple-select",
+  "name": "ngx-sand-simple-select",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^10.0.14",

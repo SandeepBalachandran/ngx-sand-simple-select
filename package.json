@@ -1,5 +1,5 @@
 {
-  "name": "sand-simple-select",
+  "name": "ngx-sand-simple-select",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -9,9 +9,13 @@
     "lint": "ng lint", 
     "e2e": "ng e2e",
     "serve-demo":"ng serve --port 2222",
-    "watch-build":"ng build sand-simple-select --watch"
+    "watch-build":"ng build sand-simple-select --watch",
+    "npm_pack": "cd dist/sand-simple-select && npm pack",
+    "prod-build": "ng build sand-simple-select --prod",
+    "copy-readme": "copy .\\README.md .\\projects\\sand-simple-select",
+    "package": "npm run copy-files && npm run prod-build &&  npm run npm_pack"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~10.0.6",
     "@angular/common": "~10.0.6",
