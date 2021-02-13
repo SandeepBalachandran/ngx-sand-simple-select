@@ -47,8 +47,8 @@
 ![](https://github.com/SandeepBalachandran/ngx-sand-simple-seelct/raw/main/assets/demo.gif) 
 
 * [Live Demo](https://sandeepbalachandran.github.io/ngx-sand-simpleselect/)
-* [Playground])
-* [NPM package]()
+* [Playground](https://stackblitz.com/edit/sand-simple-select)
+* [NPM package](https://www.npmjs.com/package/ngx-sand-simple-select)
 
 ## Table of contents
 * [Features](#features)
@@ -57,7 +57,8 @@
 * [Usage](#usage)
 
 ## Features
-* Type and search at the same time
+* Search available.
+
 
 
 [Goto Top](#table-of-contents)
@@ -101,5 +102,15 @@ class YourModule { ... }
   (close)="close($event)">
     </sand-simple-select>
  ```
+  | Property        | Purpose                                                                                               | Type   | Default value  | Mandatory  |
+  | ----------------|------------------------------------------------------------------------------------------------------ |--------|----------------|----------------|
+  | dropdowndata      | The array to be passed on the component                                  | array |            |  |
+  | disabledropdwon     | disable option for the component                                                                       | |      |  |
+  | selectLabel          | Initial label for the select                                                                   |  |             |  |
+  | select  | The event once the value is selected from the dropdown                              |  |             |  |
+  | search  | The event once start searching on the input field                                                              |  |             |  |
+  | open | The event once the dropdown is opened                                                       |  |             |  |
+  | close  | The event once the dropdown is closed                                 |  |             |  |
+
  
  [Goto Top](#table-of-contents)
