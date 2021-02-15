@@ -9,6 +9,7 @@
     "lint": "ng lint", 
     "e2e": "ng e2e",
     "serve-demo":"ng serve --port 2222",
+    "build-demo":"ng build SandSimpleSelect --prod  --base-href=https://sandeepbalachandran.github.io/ngx-sand-simple-select/",
     "watch-build":"ng build sand-simple-select --watch",
     "npm_pack": "cd dist/sand-simple-select && npm pack",
     "prod-build": "ng build sand-simple-select --prod",

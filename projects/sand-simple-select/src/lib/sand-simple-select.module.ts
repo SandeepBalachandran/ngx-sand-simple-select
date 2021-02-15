@@ -3,23 +3,28 @@ import { SandSimpleSelectComponent } from './sand-simple-select/sand-simple-sele
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { SharedPipe } from './pipes/shared.pipe';
+import { SelectFilterPipe } from './pipes/filter.pipe';
+// import { SharedPipe } from './pipes/shared.pipe';
 
 
 
 
 @NgModule({
-  declarations: [SandSimpleSelectComponent],
+  declarations: [
+    SandSimpleSelectComponent,
+    SelectFilterPipe
+  ],
   imports: [
     HttpClientModule,
     CommonModule,
     FormsModule,
-    SharedPipe
+    // SharedPipe
 
   ],
   exports: [
     SandSimpleSelectComponent,
-    SharedPipe
+    // SharedPipe
+    SelectFilterPipe
   ]
 })
 export class SandSimpleSelectModule { }
