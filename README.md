@@ -44,7 +44,7 @@
 <hr>
 
 ## Demo 
-![](https://github.com/SandeepBalachandran/ngx-sand-simple-seelct/raw/main/assets/demo.gif) 
+![](https://github.com/SandeepBalachandran/ngx-sand-simple-select/raw/main/assets/demo.gif) 
 
 * [Live Demo](https://sandeepbalachandran.github.io/ngx-sand-simpleselect/)
 * [Playground](https://stackblitz.com/edit/sand-simple-select)
